@@ -13,7 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-
+vim.g.mapleader = " "
 -- relativenumber
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -42,6 +42,9 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
 -- Optional: mouse resize
 vim.opt.mouse = "a"
 
+--tree sitter :
+vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { silent = true })
+vim.keymap.set("n", "<leader>t", ":NvimTreeFindFile<CR>",{silent = true })
 -- ColorScheme
 vim.cmd("colorscheme slate")
 
