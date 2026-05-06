@@ -1,60 +1,67 @@
-require("lazy").setup({
-  {
+require("lazy").setup({{
     "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = {"nvim-tree/nvim-web-devicons"},
     config = function()
-      require("nvim-tree").setup({})
-    end,
-  },
-
-  {
+        require("nvim-tree").setup({})
+    end
+}, {
     "williamboman/mason.nvim",
     config = function()
-      require("mason").setup()
-    end,
-  },
-
-  -- LSP
-  {
+        require("mason").setup()
+    end
+}, {
     "neovim/nvim-lspconfig",
-    dependencies = { "hrsh7th/cmp-nvim-lsp" },
+    dependencies = {"hrsh7th/cmp-nvim-lsp"},
     config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      vim.lsp.config("clangd", {
-        capabilities = capabilities,
-      })
+        -- C++
+        vim.lsp.config("clangd", {
+            capabilities = capabilities
+        })
+        vim.lsp.enable("clangd")
 
-      vim.lsp.enable("clangd")
-    end,
-  },
+        -- Python
+        vim.lsp.config("pyright", {
+            capabilities = capabilities
+        })
+        vim.lsp.enable("pyright")
 
-  -- Autocomplete
-  {
+        -- Go
+        vim.lsp.config("gopls", {
+            capabilities = capabilities
+        })
+        vim.lsp.enable("gopls")
+
+        -- Rust
+        vim.lsp.config("rust_analyzer", {
+            capabilities = capabilities
+        })
+        vim.lsp.enable("rust_analyzer")
+    end
+}, {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "L3MON4D3/LuaSnip",
-    },
+    dependencies = {"hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip"},
     config = function()
-      local cmp = require("cmp")
+        local cmp = require("cmp")
 
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
-        mapping = cmp.mapping.preset.insert({
-          ["<Tab>"] = cmp.mapping.select_next_item(),
-          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-Space>"] = cmp.mapping.complete(),
-        }),
-        sources = {
-          { name = "nvim_lsp" },
-        },
-      })
-    end,
-  },
-})
+        cmp.setup({
+            snippet = {
+                expand = function(args)
+                    require("luasnip").lsp_expand(args.body)
+                end
+            },
+            mapping = cmp.mapping.preset.insert({
+                ["<Tab>"] = cmp.mapping.select_next_item(),
+                ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+                ["<CR>"] = cmp.mapping.confirm({
+                    select = true
+                }),
+                ["<C-Space>"] = cmp.mapping.complete()
+            }),
+            sources = {{
+                name = "nvim_lsp"
+            }}
+        })
+    end
+}})
