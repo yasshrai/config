@@ -32,7 +32,16 @@ require("lazy").setup({{
             capabilities = capabilities
         })
         vim.lsp.enable("gopls")
-
+        -- TypeScript / React / Next.js
+        vim.lsp.config("ts_ls", {
+            capabilities = capabilities
+        })
+        vim.lsp.enable("ts_ls")
+        -- tailwindcss
+        vim.lsp.config("tailwindcss", {
+            capabilities = capabilities
+        })
+        vim.lsp.enable("tailwindcss")
         -- Rust
         vim.lsp.config("rust_analyzer", {
             capabilities = capabilities

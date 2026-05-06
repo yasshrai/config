@@ -175,7 +175,7 @@ source venv/bin/activate
 Inside Neovim:
 
 ```vim
-:LspInfo
+:checkhealth lsp
 ```
 
 ---
@@ -209,3 +209,93 @@ This setup gives:
 * Formatting support
 
 Works across all major languages in Neovim.
+
+---
+
+# ⚛️ JavaScript / TypeScript / React / Next.js Setup
+
+## 📦 Install Node.js
+
+```bash
+sudo pacman -S nodejs npm
+```
+
+---
+
+## 🧠 Install Language Server
+
+```bash
+npm install -g typescript typescript-language-server
+```
+
+---
+
+## 🎨 Formatter (Prettier)
+
+```bash
+npm install -g prettier
+```
+
+---
+
+## 🧹 Linting (ESLint - optional but recommended)
+
+```bash
+npm install -g vscode-langservers-extracted
+```
+
+---
+
+## 🎨 Tailwind CSS (optional)
+
+```bash
+npm install -g @tailwindcss/language-server
+```
+
+---
+
+## 📁 Create Project
+
+### Next.js app
+
+```bash
+npx create-next-app@latest my-app
+cd my-app
+```
+
+---
+
+## 🔍 Verify Installation
+
+```bash
+typescript-language-server --version
+prettier --version
+```
+
+---
+
+## 🚀 Supported Features
+
+* Autocomplete (via LSP)
+* Auto imports
+* JSX / TSX support
+* Formatting with Prettier
+
+---
+
+## ⚠️ Notes
+
+* Prettier is only for JS/TS/React/HTML/CSS
+* Use project (`package.json`) for best results
+* Works best inside Next.js / Node projects
+
+---
+
+## ✅ Summary
+
+| Tool                        | Purpose          |
+| --------------------------- | ---------------- |
+| typescript-language-server  | LSP              |
+| prettier                    | formatting       |
+| eslint                      | linting          |
+| tailwindcss-language-server | Tailwind support |
