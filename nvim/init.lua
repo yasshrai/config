@@ -33,6 +33,22 @@ vim.api.nvim_create_user_command("Term", function()
   vim.cmd("botright split | terminal")
 end, {})
 
+-- splits
+vim.keymap.set("n", "<leader>sv", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>sh",":split<CR>")
+
+-- Move between splits easily (works for terminal too)
+vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true })
+
+-- Terminal mode navigation
+vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { silent = true })
+vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { silent = true })
+vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { silent = true })
+vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { silent = true })
+
 -- Resize splits easily
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { silent = true })
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { silent = true })
@@ -46,7 +62,7 @@ vim.opt.mouse = "a"
 vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { silent = true })
 vim.keymap.set("n", "<leader>t", ":NvimTreeFindFile<CR>",{silent = true })
 -- ColorScheme
-vim.cmd("colorscheme slate")
+vim.cmd("colorscheme default")
 
 -- Tab 
 vim.opt.tabstop = 4
