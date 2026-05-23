@@ -47,6 +47,23 @@ require("lazy").setup({{
             capabilities = capabilities
         })
         vim.lsp.enable("rust_analyzer")
+
+        -- Lua
+        vim.lsp.config("lua_ls", {
+            capabilities = capabilities,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = {"vim"}
+                    },
+                    workspace = {
+                        library = vim.api.nvim_get_runtime_file("", true)
+                    }
+                }
+            }
+        })
+
+        vim.lsp.enable("lua_ls")
     end
 }, {
     "hrsh7th/nvim-cmp",

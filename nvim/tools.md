@@ -299,3 +299,15 @@ prettier --version
 | prettier                    | formatting       |
 | eslint                      | linting          |
 | tailwindcss-language-server | Tailwind support |
+
+
+---
+
+# 🌙 Lua Setup
+
+## 🧠 Lua Language Server (LSP)
+
+Install:
+
+```bash
+sudo pacman -S lua-language-server
