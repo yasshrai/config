@@ -65,9 +65,9 @@ vim.keymap.set("n", "<leader>t", ":NvimTreeFindFile<CR>",{silent = true })
 vim.cmd("colorscheme default")
 
 --lsp
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count=1,float=true}) end)
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count=-1,float=true}) end)
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float) 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- Tab 
