@@ -311,3 +311,55 @@ Install:
 
 ```bash
 sudo pacman -S lua-language-server
+```
+
+# 🔍 Telescope External Dependencies
+
+## Install Required Tools
+
+```bash
+sudo pacman -S ripgrep fd
+```
+
+---
+
+## Verify Installation
+
+```bash
+rg --version
+fd --version
+```
+
+---
+
+## Purpose
+
+| Tool           | Purpose                  |
+| -------------- | ------------------------ |
+| ripgrep (`rg`) | Fast project text search |
+| fd             | Fast file finder         |
+# 🔍 Telescope External Dependencies
+
+## Install Required Tools
+
+```bash
+sudo pacman -S ripgrep fd
+```
+
+---
+
+## Verify Installation
+
+```bash
+rg --version
+fd --version
+```
+
+---
+
+## Purpose
+
+| Tool           | Purpose                  |
+| -------------- | ------------------------ |
+| ripgrep (`rg`) | Fast project text search |
+| fd             | Fast file finder         |
