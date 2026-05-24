@@ -1,5 +1,4 @@
---nvim/lua/config/lazy.lua
-
+-- nvim/lua/config/lazy.lua
 require("lazy").setup({{
     "nvim-tree/nvim-tree.lua",
     dependencies = {"nvim-tree/nvim-web-devicons"},
@@ -50,6 +49,11 @@ require("lazy").setup({{
         })
         vim.lsp.enable("rust_analyzer")
 
+        -- Bash / Shell
+        vim.lsp.config("bashls", {
+            capabilities = capabilities
+        })
+        vim.lsp.enable("bashls")
         -- Lua
         vim.lsp.config("lua_ls", {
             capabilities = capabilities,
@@ -95,4 +99,4 @@ require("lazy").setup({{
 }, {
     "nvim-telescope/telescope.nvim",
     dependencies = {"nvim-lua/plenary.nvim"}
-}})
+}, {"vague2k/vague.nvim"}})

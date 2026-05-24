@@ -363,3 +363,72 @@ fd --version
 | -------------- | ------------------------ |
 | ripgrep (`rg`) | Fast project text search |
 | fd             | Fast file finder         |
+
+# 🐚 Shell Script (.sh) Setup
+
+## 🧠 Bash Language Server (LSP)
+
+Install:
+
+```bash
+sudo pacman -S bash-language-server
+```
+
+Verify:
+
+```bash
+bash-language-server --version
+```
+
+---
+
+## 🧹 Shell Linting
+
+Install:
+
+```bash
+sudo pacman -S shellcheck
+```
+
+Verify:
+
+```bash
+shellcheck --version
+```
+
+---
+
+## 🎨 Shell Formatter
+
+Install:
+
+```bash
+sudo pacman -S shfmt
+```
+
+Verify:
+
+```bash
+shfmt --version
+```
+
+---
+
+# 🚀 Supported Features
+
+* Autocomplete
+* Diagnostics
+* Shell script linting
+* Formatting
+* Variable suggestions
+* Command completion
+
+---
+
+# ✅ Summary
+
+| Tool                 | Purpose    |
+| -------------------- | ---------- |
+| bash-language-server | LSP        |
+| shellcheck           | linting    |
+| shfmt                | formatting |
