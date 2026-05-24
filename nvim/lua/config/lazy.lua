@@ -53,6 +53,7 @@ require("lazy").setup({{
         vim.lsp.config("bashls", {
             capabilities = capabilities
         })
+
         vim.lsp.enable("bashls")
         -- Lua
         vim.lsp.config("lua_ls", {
@@ -68,7 +69,6 @@ require("lazy").setup({{
                 }
             }
         })
-
         vim.lsp.enable("lua_ls")
     end
 }, {
@@ -99,4 +99,7 @@ require("lazy").setup({{
 }, {
     "nvim-telescope/telescope.nvim",
     dependencies = {"nvim-lua/plenary.nvim"}
-}, {"vague2k/vague.nvim"}})
+}, {"vague2k/vague.nvim"},{
+    "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 
+
+}})

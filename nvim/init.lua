@@ -96,4 +96,4 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 --colorscheme
-vim.cmd.colorscheme('vague')
+vim.cmd.colorscheme('moonfly')
